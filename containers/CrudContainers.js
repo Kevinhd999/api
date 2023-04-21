@@ -39,12 +39,12 @@ const CrudContainer = () => {
   };
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:3000/products/");
+    const response = await axios.get("https://apicrud-production-2e67.up.railway.app/productos");
     setData(response.data);
   };
 
   const handlePost = async () => {
-    const response = await axios.post("http://localhost:3000/products/", form);
+    const response = await axios.post("https://apicrud-production-2e67.up.railway.app/productos", form);
     if (response.status === 200) {
       alert(response.data.message);
     } else {
@@ -62,7 +62,7 @@ const CrudContainer = () => {
 
   const handleUpdate = async () => {
     const response = await axios.put(
-      `http://localhost:3000/products/${form.id}`,
+      `https://apicrud-production-2e67.up.railway.app/${form.id}`,
       form
     );
     if (response.status === 200) {
@@ -82,7 +82,7 @@ const CrudContainer = () => {
       return;
     }
   
-    const response = await axios.delete(`http://localhost:2000/products/${id}`);
+    const response = await axios.delete(`https://apicrud-production-2e67.up.railway.app/productos${id}`);
     if (response.status === 200) {
       alert(response.data.message);
     } else {
